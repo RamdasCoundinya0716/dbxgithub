@@ -17,9 +17,9 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
 
-      - name: List databricks repos
+      - name: Update databricks repo
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
-          databricks repos list
+          databricks repos update /Repos/ramdas.coudinya@tredence.com/dbxgithub --branch main
